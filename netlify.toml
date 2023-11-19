@@ -1,3 +1,9 @@
 [build]
   command = "npm run build"
   publish = "dist"
+
+[[redirects]]
+  force = true
+  from = "/app/*"
+  status = 200
+  to = "/.netlify/functions/app/:splat"
