@@ -33,8 +33,8 @@ serviceRouter.route("/:serviceId").get(function (req, res) {
 
 app.use("/services", serviceRouter);
 
-// All other routes handled by this function
-app.use((req, res) => {
+// Handle all other routes
+app.use("*", (req, res) => {
   res.status(404).send("Page not found");
 });
 
