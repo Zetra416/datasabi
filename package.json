@@ -5,6 +5,8 @@
   "main": "app.js",
   "scripts": {
     "tailwind": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "render-ejs": "ejs ./views/index.ejs",
+    "build": "echo 'No build step required for this project'"
   },
   "author": "",
   "license": "ISC",
