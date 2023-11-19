@@ -5,6 +5,10 @@
   "main": "app.js",
   "scripts": {
     "tailwind": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "author": "",
   "license": "ISC",
