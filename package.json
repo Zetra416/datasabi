@@ -4,8 +4,8 @@
   "description": "Basic login page example",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
-  },
+  "build": "echo 'No build step required for this project'"
+  }
   "author": "",
   "license": "ISC",
   "devDependencies": {},
