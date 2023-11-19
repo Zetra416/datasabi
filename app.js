@@ -1,36 +1,19 @@
-import express from "express";
-import serverless from "serverless-http";
-import { fileURLToPath } from "url";
-import { dirname } from "path";
+const express = require('express');
+const ejs = require('ejs');
 
 const app = express();
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
 
-app.use(express.urlencoded({ extended: true }));
-app.set("view engine", "ejs");
+app.set('view engine', 'ejs');
 
-// Render login page
-app.get("/", (req, res) => {
-  res.render("index");
+app.get('/', (req, res) => {
+  const data = {
+    title: 'Welcome to EJS!',
+    message: 'This is a simple one-page EJS application.',
+  };
+
+  res.render('index', data);
 });
 
-// Handle login form submission
-app.post("/login", (req, res) => {
-  const { username, password } = req.body;
-
-  // Perform authentication logic (this is a placeholder)
-  // For a real application, you'd check the credentials against a database
-  if (username === "demo" && password === "password") {
-    res.send("Login successful!");
-  } else {
-    res.send("Invalid credentials. Please try again.");
-  }
+app.listen(3000, () => {
+  console.log('Server listening on port 3000');
 });
-
-// Handle all other routes
-app.use("*", (req, res) => {
-  res.status(404).send("Page not found");
-});
-
-export const handler = serverless(app);
