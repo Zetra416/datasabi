@@ -4,10 +4,9 @@
   "description": "A simple one-page web EJS application",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "build": "npm run esbuild",
-    "esbuild": "esbuild --platform=node --bundle=true --target=es2015 --sourcemap --cwd dist --external:express=express --outfile=dist/app.js"
-  },
+    "build": "npm run compile && npm run esbuild",
+    "esbuild": "esbuild --platform=node --bundle=true --target=es2015 --sourcemap --external:express=express --outfile=dist/app.js"
+  }
   "author": "Zetra416",
   "license": "MIT",
   "dependencies": {
